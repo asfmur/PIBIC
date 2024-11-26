@@ -53,6 +53,7 @@ for episode in range(episodes):
             break
 
     epsilon = max(min_epsilon, epsilon * epsilon_decay)
+
 test_episodes = 10
 for episode in range(test_episodes):
     env.close()
@@ -62,8 +63,7 @@ for episode in range(test_episodes):
     done = False
 
     for step in range(max_steps):
-        if step % 5 == 0:
-            env.render()
+
 
         action = np.argmax(q_table[state])
         next_state, reward, terminated, truncated, _ = env.step(action)
