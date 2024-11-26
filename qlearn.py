@@ -64,7 +64,6 @@ for episode in range(test_episodes):
 
     for step in range(max_steps):
 
-
         action = np.argmax(q_table[state])
         next_state, reward, terminated, truncated, _ = env.step(action)
         done = terminated or truncated
